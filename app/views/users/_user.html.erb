@@ -14,8 +14,8 @@
       </div>
     </div>
 
-    <div class="row mb-4">
-      <div class="col">
+    <div class="mb-4 d-flex justify-content-between">
+      <div>
         <%=
           link_to "#",
             data: { 
@@ -32,7 +32,7 @@
         <% end %>
       </div>
 
-      <div class="col">
+      <div>
         <%=
           link_to "#",
             data: { 
@@ -49,22 +49,24 @@
         <% end %>
       </div>
 
-      <div class="col">
-        <%=
-          link_to "#",
-            data: { 
-              toggle: "modal", 
-              target: "##{dom_id(user)}_pending"
-            } do %>
+      <% if current_user == @user %>
+        <div>
+          <%=
+            link_to "#",
+              data: { 
+                toggle: "modal", 
+                target: "##{dom_id(user)}_pending"
+              } do %>
 
-          <span class="font-weight-bold">
-            <%= user.pending.size %>
-          </span>
-          
-          pending
+            <span class="font-weight-bold">
+              <%= user.pending.size %>
+            </span>
+            
+            pending
 
-        <% end %>
-      </div>
+          <% end %>
+        </div>
+      <% end %>
     </div>
 
     <div class="row mb-3">

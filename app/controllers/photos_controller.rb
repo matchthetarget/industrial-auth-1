@@ -18,9 +18,6 @@ class PhotosController < ApplicationController
 
   # GET /photos/1/edit
   def edit
-    if current_user != @photo.owner
-      redirect_back fallback_location: root_url, alert: "Nice try, sucker"
-    end
   end
 
   # POST /photos or /photos.json
@@ -41,17 +38,13 @@ class PhotosController < ApplicationController
 
   # PATCH/PUT /photos/1 or /photos/1.json
   def update
-    if current_user != @photo.owner
-      redirect_back fallback_location: root_url, alert: "Nice try, sucker"
-    else
-      respond_to do |format|
-        if @photo.update(photo_params)
-          format.html { redirect_to @photo, notice: "Photo was successfully updated." }
-          format.json { render :show, status: :ok, location: @photo }
-        else
-          format.html { render :edit, status: :unprocessable_entity }
-          format.json { render json: @photo.errors, status: :unprocessable_entity }
-        end
+    respond_to do |format|
+      if @photo.update(photo_params)
+        format.html { redirect_to @photo, notice: "Photo was successfully updated." }
+        format.json { render :show, status: :ok, location: @photo }
+      else
+        format.html { render :edit, status: :unprocessable_entity }
+        format.json { render json: @photo.errors, status: :unprocessable_entity }
       end
     end
   end

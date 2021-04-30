@@ -29,3 +29,14 @@ two:
   recipient: two
   sender: two
   status: MyString
+
+one_follows_alice:
+  sender: one
+  recipient: alice
+  status: accepted
+
+bob_sent_request_to_one:
+  sender: bob
+  recipient: one
+  status: pending
+

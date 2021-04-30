@@ -21,15 +21,29 @@
 #
 
 one:
-  image: MyString
+  image: avatar_placeholder.png
   comments_count: 1
   likes_count: 1
   caption: MyText
   owner: one
 
 two:
-  image: MyString
+  image: avatar_placeholder.png
   comments_count: 1
   likes_count: 1
   caption: MyText
   owner: two
+
+alice:
+  image: avatar_placeholder.png
+  comments_count: 0
+  likes_count: 0
+  caption: Alice is the best.
+  owner: alice
+
+bob:
+  image: avatar_placeholder.png
+  comments_count: 0
+  likes_count: 0
+  caption: Bob is the second best.
+  owner: bob

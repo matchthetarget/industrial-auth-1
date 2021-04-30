@@ -1,0 +1,2 @@
+$("<%= j (render 'form', comment: @comment) %>").appendTo('#<%= dom_id(@comment.photo) %> > ul');
+$('#<%= dom_id(@comment.photo) %>_comment_form').slideDown(350);

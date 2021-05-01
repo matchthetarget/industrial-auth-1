@@ -1,2 +1,3 @@
-$("<%= j (render 'form', comment: @comment) %>").appendTo('#<%= dom_id(@comment.photo) %> > ul');
-$('#<%= dom_id(@comment.photo) %>_comment_form').slideDown(350);
+$("<%= j (render 'comment', comment: @comment) %>").appendTo('#<%= dom_id(@comment.photo) %> > ul');
+$("<%= j (render 'new_city') %>").appendTo('#<%= dom_id(@comment.photo) %> > ul');
+$("#new_city").focus();
